@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="page-header" style="">
+        <h1>Admin Dashboard</h1>
+    </div>
+
+
+    <form role="form" action="" method="post" style="padding-left: 25px;">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" placeholder="Username" name="username" value="{{ request.form.username }}" style="width: 250px;">
+
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" placeholder="Password" name="password" value="{{ request.form.password }}" style="width: 250px;">
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+
+    {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+    {% endif %}
+
+
+{% endblock %}
